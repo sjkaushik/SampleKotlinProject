@@ -27,6 +27,8 @@ abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel> : DaggerF
         init(inflater, container!!)
         init()
         super.onCreateView(inflater, container, savedInstanceState)
+
+        attachObservers()
         return mBinding.root
     }
 

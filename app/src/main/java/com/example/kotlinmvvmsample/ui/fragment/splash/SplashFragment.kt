@@ -3,6 +3,7 @@ package com.example.kotlinmvvmsample.ui.fragment.splash
 import android.util.Log
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.example.kotlinmvvmsample.R
 import com.example.kotlinmvvmsample.base.BaseFragment
 import com.example.kotlinmvvmsample.databinding.FragmentSplashBinding
@@ -16,11 +17,6 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>() {
     @Inject
     lateinit var viewModel: SplashViewModel
 
-    override fun onStart() {
-        super.onStart()
-        mBinding.viewModel = viewModel
-    }
-
     override fun getLayoutRes(): Int {
         return R.layout.fragment_splash
     }
@@ -31,7 +27,12 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>() {
 
     override fun attachObservers() {
 
+        mBinding.viewModel = viewModel
+
         viewModel.clickAction.observe(this, Observer {
+
+            if (it)
+                findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
 
             Log.d("hell", "smart")
         })
