@@ -1,7 +1,8 @@
 package com.example.kotlinmvvmsample.ui.activity
 
-
 import android.os.Bundle
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.kotlinmvvmsample.R
 import com.example.kotlinmvvmsample.base.BaseActivity
 import com.example.kotlinmvvmsample.databinding.ActivityMainBinding
@@ -17,6 +18,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding.viewModel = viewModel
+
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
     override fun getLayoutRes(): Int {
