@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.kotlinmvvmsample.ui.fragment.splash.SplashViewModel" />
+            type="com.kotlin.camp.ui.fragment.splash.SplashViewModel" />
 
     </data>
 

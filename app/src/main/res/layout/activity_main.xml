@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.kotlinmvvmsample.ui.activity.MainViewModel" />
+            type="com.kotlin.camp.ui.activity.MainViewModel" />
 
     </data>
 

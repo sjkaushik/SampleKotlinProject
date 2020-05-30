@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.kotlinmvvmsample.ui.fragment.splash.SplashFragment"
+        android:name="com.kotlin.camp.ui.fragment.splash.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.kotlinmvvmsample.ui.fragment.home.HomeFragment"
+        android:name="com.kotlin.camp.ui.fragment.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 </navigation>

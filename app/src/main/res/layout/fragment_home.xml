@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.kotlinmvvmsample.ui.fragment.home.HomeViewModel" />
+            type="com.kotlin.camp.ui.fragment.home.HomeViewModel" />
 
     </data>
 
