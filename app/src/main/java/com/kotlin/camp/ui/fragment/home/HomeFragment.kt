@@ -1,6 +1,8 @@
 package com.kotlin.camp.ui.fragment.home
 
+import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.kotlin.camp.R
 import com.kotlin.camp.base.BaseFragment
 import com.kotlin.camp.databinding.FragmentHomeBinding
@@ -24,6 +26,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun attachObservers() {
         mBinding.viewModel = viewModel
+
+        viewModel.countryLiveData.observe(this, Observer {
+            Log.d("K-Test", it.toString())
+        })
     }
 
 
