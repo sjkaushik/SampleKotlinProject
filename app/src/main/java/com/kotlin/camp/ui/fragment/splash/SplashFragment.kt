@@ -1,6 +1,6 @@
 package com.kotlin.camp.ui.fragment.splash
 
-import androidx.fragment.app.Fragment
+import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.kotlin.camp.R
@@ -12,9 +12,6 @@ import io.reactivex.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-/**
- * A simple [Fragment] subclass.
- */
 class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>() {
 
     @Inject
@@ -34,7 +31,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>() {
 
         mBinding.viewModel = viewModel
 
-        viewModel.clickAction.observe(this, Observer {
+        viewModel.showDashBoard.observe(this, Observer {
             splashObject.onNext(it)
         })
 
@@ -49,7 +46,9 @@ class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>() {
     }
 
     private fun openDashBoard() {
-        findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+        var bundle = Bundle()
+        bundle.putString("countryName", "")
+        findNavController().navigate(R.id.action_splashFragment_to_homeFragment, bundle)
     }
 
 }

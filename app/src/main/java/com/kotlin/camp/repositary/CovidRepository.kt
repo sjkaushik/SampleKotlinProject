@@ -10,26 +10,21 @@ class CovidRepository
 @Inject
 constructor(private val apiService: ApiService) : BaseRepository() {
 
-    suspend fun getCountries(): MutableList<Country>? {
+    suspend fun getCountries(): ArrayList<Country>? {
 
-        val countriesResponse = safeApiCall(
+        return safeApiCall(
             call = { apiService.getCountries().await() },
-            errorMessage = "Error Fetching Popular Movies"
+            errorMessage = "Error Fetching Countries"
         )
-
-        return countriesResponse?.toMutableList()
-
     }
 
 
-    suspend fun getCovidByCountries(country: String): MutableList<Covid>? {
+    suspend fun getCovidByCountries(country: String): ArrayList<Covid>? {
 
-        val countriesResponse = safeApiCall(
+        return safeApiCall(
             call = { apiService.getCovidByCountries(country).await() },
-            errorMessage = "Error Fetching Popular Movies"
+            errorMessage = "Error Fetching Covid by countries"
         )
-
-        return countriesResponse?.toMutableList()
 
     }
 

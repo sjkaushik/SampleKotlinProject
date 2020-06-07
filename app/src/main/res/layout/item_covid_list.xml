@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="itemViewModel"
+            type="com.kotlin.camp.model.Covid" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="16dp">
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/date"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@{itemViewModel.date.substring(0,10)}"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="helllo" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cases"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@{itemViewModel.confirmed.toString()}"
+                    app:layout_constraintStart_toEndOf="@+id/date"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="300" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/active"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@{itemViewModel.active.toString()}"
+                    app:layout_constraintStart_toEndOf="@+id/cases"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="120" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/recovered"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@{itemViewModel.recovered.toString()}"
+                    app:layout_constraintStart_toEndOf="@+id/active"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="120" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/death"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@{itemViewModel.deaths.toString()}"
+                    app:layout_constraintStart_toEndOf="@+id/recovered"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="120" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

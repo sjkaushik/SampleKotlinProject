@@ -1,17 +1,19 @@
 package com.kotlin.camp.ui.fragment.splash
 
+import androidx.lifecycle.MutableLiveData
 import com.kotlin.camp.base.BaseViewModel
-import com.kotlin.camp.rx.SingleLiveEvent
+import com.kotlin.camp.repositary.CovidRepository
 import javax.inject.Inject
 
 class SplashViewModel
 @Inject
-constructor() : BaseViewModel() {
+constructor(private val covidRepository: CovidRepository) : BaseViewModel() {
 
-    val clickAction = SingleLiveEvent<Boolean>()
+    val showDashBoard = MutableLiveData<Boolean>()
 
     init {
-        clickAction.value = true
+        showDashBoard.value = true
     }
+
 
 }

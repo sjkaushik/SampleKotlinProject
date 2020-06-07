@@ -2,8 +2,9 @@ package com.kotlin.camp.ui.fragment.home
 
 import androidx.lifecycle.MutableLiveData
 import com.kotlin.camp.base.BaseViewModel
-import com.kotlin.camp.model.Country
+import com.kotlin.camp.model.Covid
 import com.kotlin.camp.repositary.CovidRepository
+import com.kotlin.camp.rx.SingleLiveEvent
 import kotlinx.coroutines.*
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
@@ -18,18 +19,32 @@ constructor(private val covidRepository: CovidRepository) : BaseViewModel() {
 
     private val scope = CoroutineScope(coroutineContext)
 
-    val countryLiveData = MutableLiveData<MutableList<Country>>()
+    val covidCountryLiveData = MutableLiveData<ArrayList<Covid>>()
+    val isLoading = MutableLiveData<Boolean>()
+    val showTitle = MutableLiveData<Boolean>()
+    val showCountryScreen = SingleLiveEvent<Boolean>()
+    val countryName = MutableLiveData<String>()
 
     init {
-        fetchCountries()
+
+        countryName.value = "Choose Country"
     }
 
+    fun onShowCountryScreen() {
+        showCountryScreen.value = true
+    }
 
-    private fun fetchCountries() {
+    fun fetchCovidByCountries(country: String) {
+
+        showTitle.value = true
+        countryName.value = country
+
+        isLoading.value = true
         scope.launch {
-            val countries = covidRepository.getCountries()
-            countryLiveData.postValue(countries)
+            val covid = covidRepository.getCovidByCountries("india")
+            covidCountryLiveData.postValue(covid)
         }
+        isLoading.value = false
     }
 
 
