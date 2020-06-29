@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'dagger.hilt.android.plugin'
 
 android {
     compileSdkVersion 29
@@ -84,12 +85,11 @@ dependencies {
     //material
     implementation "com.google.android.material:material:$rootProject.material_version"
 
-    //room
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
-    implementation "androidx.room:room-ktx:$room_version"
-
     // rxJava
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rx_android_version"
     implementation "io.reactivex.rxjava2:rxjava:$rootProject.rx_java_version"
+
+    // dagger hilt
+    implementation "com.google.dagger:hilt-android:$rootProject.dagger_hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$rootProject.dagger_hilt"
 }
