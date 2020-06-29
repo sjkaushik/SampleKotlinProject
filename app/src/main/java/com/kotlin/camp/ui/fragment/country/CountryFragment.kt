@@ -4,6 +4,7 @@ package com.kotlin.camp.ui.fragment.country
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,16 +12,16 @@ import com.kotlin.camp.R
 import com.kotlin.camp.adapter.CountryAdapter
 import com.kotlin.camp.base.BaseFragment
 import com.kotlin.camp.databinding.FragmentCountryBinding
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_country.*
-import javax.inject.Inject
 
 /**
  * A simple [Fragment] subclass.
  */
+@AndroidEntryPoint
 class CountryFragment : BaseFragment<FragmentCountryBinding, CountryViewModel>() {
 
-    @Inject
-    lateinit var viewModel: CountryViewModel
+    private val viewModel: CountryViewModel by viewModels()
 
     override fun getLayoutRes(): Int {
         return R.layout.fragment_country

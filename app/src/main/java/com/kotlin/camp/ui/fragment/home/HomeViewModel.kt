@@ -1,16 +1,16 @@
 package com.kotlin.camp.ui.fragment.home
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import com.kotlin.camp.base.BaseViewModel
 import com.kotlin.camp.model.Covid
 import com.kotlin.camp.repositary.CovidRepository
 import com.kotlin.camp.rx.SingleLiveEvent
 import kotlinx.coroutines.*
-import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 class HomeViewModel
-@Inject
+@ViewModelInject
 constructor(private val covidRepository: CovidRepository) : BaseViewModel() {
     private val parentJob = Job()
 

@@ -11,7 +11,6 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
-
     private val viewModel: MainViewModel by viewModels()
     private val TAG = MainActivity::class.java.simpleName
 

@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import dagger.android.support.DaggerFragment
+import androidx.fragment.app.Fragment
 
-abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel> : DaggerFragment() {
+abstract class BaseFragment<VDB : ViewDataBinding, VM : BaseViewModel> : Fragment() {
 
     open lateinit var mBinding: VDB
 

@@ -1,12 +1,12 @@
 package com.kotlin.camp.base
 
 import androidx.annotation.LayoutRes
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import dagger.android.support.DaggerAppCompatActivity
 
 abstract class BaseActivity<VDB : ViewDataBinding, VM : BaseViewModel> :
-    DaggerAppCompatActivity() {
+    AppCompatActivity() {
 
     @LayoutRes
     abstract fun getLayoutRes(): Int

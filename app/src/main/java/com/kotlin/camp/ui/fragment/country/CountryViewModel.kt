@@ -1,15 +1,15 @@
 package com.kotlin.camp.ui.fragment.country
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import com.kotlin.camp.base.BaseViewModel
 import com.kotlin.camp.model.Country
 import com.kotlin.camp.repositary.CovidRepository
 import kotlinx.coroutines.*
-import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
 class CountryViewModel
-@Inject
+@ViewModelInject
 constructor(private val covidRepository: CovidRepository) : BaseViewModel() {
 
     private val parentJob = Job()

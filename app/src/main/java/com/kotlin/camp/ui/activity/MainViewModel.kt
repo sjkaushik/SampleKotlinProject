@@ -1,11 +1,11 @@
 package com.kotlin.camp.ui.activity
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import com.kotlin.camp.base.BaseViewModel
-import javax.inject.Inject
 
 class MainViewModel
-@Inject
+@ViewModelInject
 constructor() : BaseViewModel() {
 
     val text = MutableLiveData<String>()

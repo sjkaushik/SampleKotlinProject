@@ -3,11 +3,11 @@ package com.kotlin.camp.di.modules
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.kotlin.camp.BuildConfig
 import com.kotlin.camp.apiservice.ApiService
-import com.kotlin.camp.di.AppComponent
 import com.kotlin.camp.repositary.CovidRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -17,7 +17,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-@InstallIn(AppComponent::class)
+@InstallIn(ApplicationComponent::class)
 class NetworkModule {
 
     @Provides

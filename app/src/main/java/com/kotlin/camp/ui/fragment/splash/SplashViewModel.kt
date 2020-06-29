@@ -1,12 +1,12 @@
 package com.kotlin.camp.ui.fragment.splash
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import com.kotlin.camp.base.BaseViewModel
 import com.kotlin.camp.repositary.CovidRepository
-import javax.inject.Inject
 
 class SplashViewModel
-@Inject
+@ViewModelInject
 constructor(private val covidRepository: CovidRepository) : BaseViewModel() {
 
     val showDashBoard = MutableLiveData<Boolean>()

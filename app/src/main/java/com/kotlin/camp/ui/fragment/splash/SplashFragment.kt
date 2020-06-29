@@ -1,21 +1,22 @@
 package com.kotlin.camp.ui.fragment.splash
 
 import android.os.Bundle
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.kotlin.camp.R
 import com.kotlin.camp.base.BaseFragment
 import com.kotlin.camp.databinding.FragmentSplashBinding
+import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import io.reactivex.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
-import javax.inject.Inject
 
+@AndroidEntryPoint
 class SplashFragment : BaseFragment<FragmentSplashBinding, SplashViewModel>() {
 
-    @Inject
-    lateinit var viewModel: SplashViewModel
+    private val viewModel: SplashViewModel by viewModels()
 
     private val splashObject = PublishSubject.create<Boolean>()
 

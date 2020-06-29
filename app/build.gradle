@@ -92,4 +92,5 @@ dependencies {
     // dagger hilt
     implementation "com.google.dagger:hilt-android:$rootProject.dagger_hilt"
     kapt "com.google.dagger:hilt-android-compiler:$rootProject.dagger_hilt"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01'
 }
